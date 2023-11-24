@@ -1,7 +1,9 @@
 import os
+import sys
 import json
 import click
-
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, script_dir)
 text = r"""                _                        _   _        ______    _     _              _____                _             
      /\        | |                      | | (_)      |  ____|  | |   | |            / ____|              | |            
     /  \  _   _| |_ ___  _ __ ___   __ _| |_ _  ___  | |__ ___ | | __| | ___ _ __  | |     _ __ ___  __ _| |_ ___  _ __ 
