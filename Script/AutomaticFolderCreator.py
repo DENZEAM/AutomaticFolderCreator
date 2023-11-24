@@ -1,5 +1,5 @@
 import os
-from Dependencies import click
+from Dependencies.click import click
 import json
 
 
