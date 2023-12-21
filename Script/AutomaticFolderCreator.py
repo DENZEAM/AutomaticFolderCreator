@@ -49,12 +49,39 @@ def Hub():
 
 ## Script
 
+
 def GetAllPreset():
-    MyPresset = config["folder"]["underFolder"]
-    for i in MyPresset:
-        print(i)
+    MyPreset = config["folder"]["Preset"]
+    PressetEnv = []
+    for k,v in enumerate(MyPreset):
+        print(v)
+        print("[{}] {}".format(k,v["Name"]))
+        PressetEnv.append(v)
         
-GetAllPreset()
+    return PressetEnv       
+
+
+
+def SetPreset(preset):
+    print("pps")
+    for i in preset:
+        print(i)
+def ChoicePreset():
+    click.echo("Voici vos configuration : ")
+    Preset = GetAllPreset()
+    ChoicedPreset = input("Quelle configuration voulez vous utiliser ? : ")
+    
+    for i in range(len(Preset)+1):
+        if ChoicedPreset == str(i):
+            SetPreset(Preset[i])
+            break
+        elif i == len(Preset)-1:
+            click.echo("Veuillez insérer un preset existant.")
+            ChoicePreset()
+            
+
+
+
 def createDay(nbr,path):
     
     for i in range(nbr+1):
@@ -94,13 +121,14 @@ def CreateDoss():
     else:
         print("Il n'y a rien")
  
- 
-        
-def ChoicePreset():
-    AllPreset = config["folder"]
-    input("Inserez le nom votre dossier principale : ")
 
-Hub()
+            
+            
+    
+            
+    
+
+ChoicePreset()
 
 
 
