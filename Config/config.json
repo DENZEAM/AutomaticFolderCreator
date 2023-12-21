@@ -1,12 +1,48 @@
 {
     "folder":{
         
-        "path":"C:\\Users\\eljai\\Desktop\\Dev\\Python",
+        "path":[
+            "C:\\Users\\eljai\\Desktop\\Dev\\Python"
+        ],
         "underFolder":[
             "Theorie",
             "TP",
             "Notes"
-        ]
+        ],
+        
+        "Preset":[
 
+            {
+                "Name":"School",
+
+                "underFolder":[
+                    "Theorie",
+                    "TP",
+                    "Notes"
+                ]
+                   
+            },
+
+            {
+                "Name":"Py Projet",
+                
+                "underFolder":[
+                    "Config",
+                    "Dependencies",
+                    "Script"
+                ],
+
+                "underUnderFolder":{
+                    "Script":"API",
+                    "Script":"Main"
+                    
+                },
+                
+                "UnderFilesFolder":{
+                    "Config":"config.json"
+                }
+                   
+            }
+        ]
     }
 }

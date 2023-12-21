@@ -28,8 +28,9 @@ def Hub():
         Choisiez votre mode
         
         1. Mode createur
-        2. exit
-        3. AFC Teams Information
+        2. Mes Configuration
+        3. exit
+        4. AFC Teams Information
     """
     )
     choix = click.prompt("Entre votre choix ")
@@ -38,15 +39,22 @@ def Hub():
     if choix == "1":
         print("Mode createur")
     elif choix == "2" :
-        print("exit")
+        print("Mes Configuration")
     elif choix == "3" : 
+        print("exit")
+    elif choix == "4":
         print("AFC Teams Information")
-    else : 
-        print()
     
 
 
 ## Script
+
+def GetAllPreset():
+    MyPresset = config["folder"]["underFolder"]
+    for i in MyPresset:
+        print(i)
+        
+GetAllPreset()
 def createDay(nbr,path):
     
     for i in range(nbr+1):
@@ -66,7 +74,7 @@ def createDay(nbr,path):
 
 def CreateDoss():
     
-    NameDoss = input("Inserez le nom de votre de la matiere: ")
+    NameDoss = input("Inserez le nom votre dossier principale : ")
     NbrDays = input("Inserez le nombre de jour: ")
     NameAdress = config["folder"]["path"]
     while not os.path.exists(NameAdress) :
@@ -85,10 +93,14 @@ def CreateDoss():
         createDay(int(NbrDays),NewPath)
     else:
         print("Il n'y a rien")
+ 
+ 
+        
+def ChoicePreset():
+    AllPreset = config["folder"]
+    input("Inserez le nom votre dossier principale : ")
 
 Hub()
 
 
-# A venir 
-# Systeme de preset 
-# Exportation en .exe
+
