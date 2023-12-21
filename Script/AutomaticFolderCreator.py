@@ -1,5 +1,5 @@
 import os
-from Dependencies.click import click
+import click 
 import json
 
 
@@ -11,12 +11,15 @@ text = r"""                _                        _   _        ______    _    
  /_/    \_\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___| |_|  \___/|_|\__,_|\___|_|     \_____|_|  \___|\__,_|\__\___/|_|   
                                                                                                                         
 """
-with open('Config/config.json', 'r') as fichier: # importation du fichier json
-    # Charger les données JSON depuis le fichier
-    config = json.load(fichier)
 
 
+ConfigFiles = os.path.join(os.path.dirname(__file__), '../Config/config.json')
 
+with open(ConfigFiles, 'r') as file: ## Import Config
+    config = json.load(file)
+
+
+## Hub 
 def Hub():
     click.echo("© 2023 AFC-Teams. All rights reserved")
     click.echo(click.style(text, fg='green'))
@@ -29,21 +32,21 @@ def Hub():
         3. AFC Teams Information
     """
     )
-    choix = click.prompt("Entre votre choix")
+    choix = click.prompt("Entre votre choix ")
     click.option('--choix', prompt='Entrez votre choix', help='Votre nom.')
     
-    if choix == 1:
-        print("")
-    elif choix == 2 :
-        print()
-    elif choix == 3 : 
-        print()
+    if choix == "1":
+        print("Mode createur")
+    elif choix == "2" :
+        print("exit")
+    elif choix == "3" : 
+        print("AFC Teams Information")
     else : 
         print()
     
-    
 
 
+## Script
 def createDay(nbr,path):
     
     for i in range(nbr+1):
@@ -84,3 +87,8 @@ def CreateDoss():
         print("Il n'y a rien")
 
 Hub()
+
+
+# A venir 
+# Systeme de preset 
+# Exportation en .exe
