@@ -2,6 +2,7 @@
     "folder":{
         
         "path":[
+            "C:\\Users\\eljai\\Desktop\\Dev\\Python",
             "C:\\Users\\eljai\\Desktop\\Dev\\Python"
         ],
         "underFolder":[
@@ -14,7 +15,7 @@
 
             {
                 "Name":"School",
-
+                "Days":"True",
                 "underFolder":[
                     "Theorie",
                     "TP",
@@ -25,21 +26,22 @@
 
             {
                 "Name":"Py Projet",
-                
+
+                "Days":"False",
+
                 "underFolder":[
                     "Config",
                     "Dependencies",
                     "Script"
                 ],
 
-                "underUnderFolder":{
-                    "Script":"API",
-                    "Script":"Main"
-                    
-                },
+                "underUnderFolder": {
+                    "Scripts": ["API", "Main"],
+                    "Dependencies": ["Exemple1","Exemple2"]
+                },                
                 
-                "UnderFilesFolder":{
-                    "Config":"config.json"
+                "underFilesFolder":{
+                    "Config":["config.json","Exemple1.json"]
                 }
                    
             }

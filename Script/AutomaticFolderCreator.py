@@ -54,24 +54,41 @@ def GetAllPreset():
     MyPreset = config["folder"]["Preset"]
     PressetEnv = []
     for k,v in enumerate(MyPreset):
-        print(v)
+        
         print("[{}] {}".format(k,v["Name"]))
+        print(v)
         PressetEnv.append(v)
         
     return PressetEnv       
 
+def GetAllPath():
+    path = config["folder"]["path"]
+    for k,v in enumerate(path):
+        print("[{}] {}".format(k,v))
+    
+    return path
+        
 
 
 def SetPreset(preset):
-    print("pps")
-    for i in preset:
-        print(i)
+    Name = preset["Name"]
+    underFolder = preset["underFolder"]
+    underUnderFolder = preset["underUnderFolder"]
+    underFilesFolder = preset["underFilesFolder"]
+    Days = preset["Days"]
+   
+    print(Name)
+    
+        
+    
+        
 def ChoicePreset():
     click.echo("Voici vos configuration : ")
     Preset = GetAllPreset()
     ChoicedPreset = input("Quelle configuration voulez vous utiliser ? : ")
     
     for i in range(len(Preset)+1):
+        
         if ChoicedPreset == str(i):
             SetPreset(Preset[i])
             break
@@ -80,6 +97,18 @@ def ChoicePreset():
             ChoicePreset()
             
 
+def ChoicePath():
+    click.echo("Voici vos chemin de dossiers disponible : ")
+    path = GetAllPath()
+    ChoicedPreset = input("Quelle chemin de dossiers voulez vous utiliser ? : ")
+    for i in range(len(path)+1):
+        
+        if ChoicedPreset == str(i):
+            return i
+        elif i == len(path)-1:
+            click.echo("Veuillez insérer un preset existant.")
+            ChoicePath()
+    
 
 
 def createDay(nbr,path):
@@ -100,7 +129,6 @@ def createDay(nbr,path):
 
 
 def CreateDoss():
-    
     NameDoss = input("Inserez le nom votre dossier principale : ")
     NbrDays = input("Inserez le nombre de jour: ")
     NameAdress = config["folder"]["path"]
@@ -128,7 +156,6 @@ def CreateDoss():
             
     
 
-ChoicePreset()
-
-
+# ChoicePreset()
+ChoicePath()
 
