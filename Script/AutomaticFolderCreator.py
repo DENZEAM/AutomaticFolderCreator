@@ -112,7 +112,6 @@ def ChoicePath():
 
 
 def createDay(nbr,path):
-    
     for i in range(nbr+1):
         os.chdir(path)
         if i > 0:
@@ -148,13 +147,6 @@ def CreateDoss():
         createDay(int(NbrDays),NewPath)
     else:
         print("Il n'y a rien")
- 
-
-            
-            
-    
-            
-    
 
 # ChoicePreset()
 ChoicePath()
