@@ -1,11 +1,12 @@
 
 
 from pathlib import Path
+import AutomaticFolderCreator
 
-# from tkinter import *
-# Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
-
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage , filedialog , messagebox
+import json
+import os
+from pathlib import Path
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\eljai\Documents\GitHub\AutomaticFolderCreator\build\assets\frame0")
@@ -15,6 +16,38 @@ def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 
+filePath = None
+Config = None
+
+def import_json():
+    global Config
+    filepath = filedialog.askopenfilename(filetypes=[("Fichiers JSON", "*.json")])
+    if filepath:
+        with open(filepath, 'r') as file:
+            data = json.load(file)
+            Config = filepath
+            print(Config)
+            messagebox.showinfo("Config sélectionnée", f"Config sélectionnée : {filepath}")
+        return data
+    else:
+        return None
+
+def select_path():
+    global filePath
+    filepath = filedialog.askdirectory()
+    if filepath:
+        messagebox.showinfo("Chemin sélectionné", f"Chemin sélectionné : {filepath}")
+        filePath = filepath
+        return filepath
+    else:
+        return None
+
+def Create():
+    print("Okkk")
+    if Config and filePath:
+        AutomaticFolderCreator.create_structure(Config, filePath)
+    else:
+        messagebox.showerror("Erreur", "Veuillez sélectionner une configuration et un chemin.")
 window = Tk()
 
 window.geometry("745x504")
@@ -116,7 +149,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=2,
     highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
+    command=lambda: import_json(),
     relief="flat"
 )
 button_1.place(
@@ -148,7 +181,7 @@ button_3 = Button(
     image=button_image_3,
     borderwidth=2,
     highlightthickness=0,
-    command=lambda: print("button_3 clicked"),
+    command=lambda: select_path(),
     relief="flat"
 )
 button_3.place(
@@ -164,7 +197,7 @@ button_4 = Button(
     image=button_image_4,
     borderwidth=3,
     highlightthickness=0,
-    command=lambda: print("button_4 clicked"),
+    command=lambda: Create(),
     relief="flat"
 )
 button_4.place(
@@ -201,3 +234,7 @@ canvas.create_text(
 )
 window.resizable(False, False)
 window.mainloop()
+
+
+
+

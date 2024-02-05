@@ -1,0 +1,20 @@
+{
+  "folder": {
+    "Preset": {
+      "Name": "Py Projet",
+
+      "Days": "False",
+
+      "underFolder": ["Config", "Dependencies", "Script"],
+
+      "underUnderFolder": {
+        "Scripts": ["API", "Main"],
+        "Dependencies": ["Exemple1", "Exemple2"]
+      },
+
+      "underFilesFolder": {
+        "Config": ["config.json", "Exemple1.json"]
+      }
+    }
+  }
+}
