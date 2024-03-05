@@ -1,50 +1,34 @@
 {
-    "folder":{
-        
-        "path":[
-            "C:\\Users\\eljai\\Desktop\\Dev\\Python",
-            "C:\\Users\\eljai\\Desktop\\Dev\\Python"
-        ],
-        "underFolder":[
-            "Theorie",
-            "TP",
-            "Notes"
-        ],
-        
-        "Preset":[
+  "folder": {
+    "path": [
+      "C:\\Users\\eljai\\Desktop\\Dev\\Python",
+      "C:\\Users\\eljai\\Desktop\\Dev\\Python"
+    ],
+    "underFolder": ["Theorie", "TP", "Notes"],
 
-            {
-                "Name":"School",
-                "Days":"True",
-                "underFolder":[
-                    "Theorie",
-                    "TP",
-                    "Notes"
-                ]
-                   
-            },
+    "Preset": [
+      {
+        "Name": "School",
+        "Days": "True",
+        "underFolder": ["Theorie", "TP", "Notes"]
+      },
 
-            {
-                "Name":"Py Projet",
+      {
+        "Name": "Py Projet",
 
-                "Days":"False",
+        "Days": "False",
 
-                "underFolder":[
-                    "Config",
-                    "Dependencies",
-                    "Script"
-                ],
+        "underFolder": ["Config", "Dependencies", "Script"],
 
-                "underUnderFolder": {
-                    "Scripts": ["API", "Main"],
-                    "Dependencies": ["Exemple1","Exemple2"]
-                },                
-                
-                "underFilesFolder":{
-                    "Config":["config.json","Exemple1.json"]
-                }
-                   
-            }
-        ]
-    }
+        "underUnderFolder": {
+          "Scripts": ["API", "Main"],
+          "Dependencies": ["Exemple1", "Exemple2"]
+        },
+
+        "underFilesFolder": {
+          "Config": ["config.json", "Exemple1.json"]
+        }
+      }
+    ]
+  }
 }
