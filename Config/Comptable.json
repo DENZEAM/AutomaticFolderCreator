@@ -1,0 +1,17 @@
+{
+  "folder": {
+    "Preset": {
+      "Name": "Accounting Project",
+      "Days": "False",
+      "underFolder": ["Reports", "Data", "Documents"],
+      "underUnderFolder": {
+        "Reports": ["Monthly", "Yearly"],
+        "Data": ["Invoices", "Expenses"],
+        "Documents": ["Policies", "Procedures"]
+      },
+      "underFilesFolder": {
+        "Documents": ["Policies.docx", "Procedures.pdf"]
+      }
+    }
+  }
+}
